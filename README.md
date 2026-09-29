@@ -39,31 +39,12 @@ throughout via Tailwind classes (`bg-ivory`, `text-wine`, `font-display`, etc.):
 
 ## Imagery
 
-Every image slot on the site currently shows a **real, free-to-use photo**
-sourced from Unsplash (free under the [Unsplash License](https://unsplash.com/license)),
-wired in via `src/lib/images.ts`:
+Every image on the site comes from `src/lib/uploaded-links.json` (R2-hosted).
+`src/lib/images.ts` turns that list into a pool (`PHOTOS`) and maps it to slots:
 
-- **Brand/atmosphere imagery** (hero, chapter storytelling, collection cards,
-  craft section, About, Stories) uses real architecture and craft photography
-  — heritage archways, carved doors, tile patterns, thread/loom close-ups,
-  marigolds — that genuinely matches the brand mood.
-- **Product-specific imagery** (Shop grid, Product gallery, Lookbook,
-  Featured Edit) uses **random fabric/textile close-ups** as stand-ins, since
-  no real garment photography exists yet for Komal Tara, Sona Pankh, etc.
-  These are placeholders in spirit even though they're real photos — treat
-  every product image as temporary until you shoot the actual pieces.
-
-To swap any image, edit `src/data/products.ts` / `src/data/stories.ts` (for
-product and journal imagery) or the relevant page's `IMAGES.xxx` reference
-(for brand/atmosphere imagery), and update `src/lib/images.ts` with the new
-URL or a local asset path:
-
-```tsx
-<ImageSlot texture="t1" label="Hero" image="/images/hero-nikhaar.jpg" />
-```
-
-`texture` is the gradient fallback shown only if `image` is ever omitted, so
-removing an image never breaks the layout.
+- `productGallery(n)` — four photos per product (product page gallery, shop grid, lookbook)
+- `IMAGES.*` — named slots for Home, page heroes, About and Stories
+- To change a slot, edit its index in `images.ts`; nothing else needs to move.
 
 ## Routes
 

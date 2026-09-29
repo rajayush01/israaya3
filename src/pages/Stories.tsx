@@ -17,7 +17,7 @@ export default function Stories() {
   return (
     <div>
       <Nav />
-      <PageHero eyebrow="Journal" title="Stories" texture="t4" image={IMAGES.doorway} label="Stories cover — atelier interior" />
+      <PageHero eyebrow="Journal" title="Stories" texture="t4" image={IMAGES.storiesHero} label="Stories cover — atelier interior" />
 
       <section className="px-[5vw] py-[min(10vw,120px)]">
         <div className="flex flex-col gap-16 md:gap-[70px]">

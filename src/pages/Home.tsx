@@ -54,8 +54,8 @@ function Hero() {
     <section ref={ref} className="relative h-screen min-h-[640px] overflow-hidden flex items-end">
       <motion.div style={{ scale }} className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${IMAGES.palaceInterior})` }}
+          className="absolute inset-0 bg-cover"
+          style={{ backgroundPosition: "50% 22%", backgroundImage: `url(${IMAGES.homeHero})` }}
         />
         <div
           className="absolute inset-0"
@@ -221,14 +221,14 @@ function ChapterStorytelling() {
         </motion.div>
       </div>
 
-      <RevealPanel texture="t1" image={IMAGES.threads} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." />
+      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." />
 
       <div className="grid md:grid-cols-2 gap-5">
-        <RevealPanel texture="t2" image={IMAGES.threads} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="60vh" />
-        <RevealPanel texture="t3" image={IMAGES.archway} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="60vh" />
+        <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="60vh" />
+        <RevealPanel texture="t3" image={IMAGES.reveal3} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="60vh" />
       </div>
 
-      <RevealPanel texture="t4" image={IMAGES.carvedDoor} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="75vh" />
+      <RevealPanel texture="t4" image={IMAGES.reveal4} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="75vh" />
 
       <div className="flex justify-center mt-12 pb-24">
         <Link
@@ -244,9 +244,9 @@ function ChapterStorytelling() {
 }
 
 const COLLECTIONS: { name: string; texture: any; image: string; span: string; dark?: boolean; locked?: boolean }[] = [
-  { name: "Nikhaar", texture: "t1", image: IMAGES.archway, span: "md:col-span-6" },
-  { name: "Chapter II", texture: "t2", image: IMAGES.carvedDoor, span: "md:col-span-4", locked: true },
-  { name: "Chapter III", texture: "t3", image: IMAGES.tilePattern, span: "md:col-span-3", locked: true },
+  { name: "Nikhaar", texture: "t1", image: IMAGES.collNikhaar, span: "md:col-span-6" },
+  { name: "Chapter II", texture: "t2", image: IMAGES.collChapter2, span: "md:col-span-4", locked: true },
+  { name: "Chapter III", texture: "t3", image: IMAGES.collChapter3, span: "md:col-span-3", locked: true },
 ];
 
 function CollectionsGrid() {
@@ -306,11 +306,11 @@ function CollectionsGrid() {
 }
 
 const CRAFT_TAGS: { tag: string; texture: any; image: string }[] = [
-  { tag: "Zardozi", texture: "t5", image: IMAGES.threads },
-  { tag: "Dori Work", texture: "t6", image: IMAGES.threads },
-  { tag: "Resham", texture: "t7", image: IMAGES.tilePattern },
-  { tag: "Beadwork", texture: "t8", image: IMAGES.marigold },
-  { tag: "Crafted in India", texture: "t4", image: IMAGES.carvedDoor },
+  { tag: "Zardozi", texture: "t5", image: IMAGES.craftZardozi },
+  { tag: "Dori Work", texture: "t6", image: IMAGES.craftDori },
+  { tag: "Resham", texture: "t7", image: IMAGES.craftResham },
+  { tag: "Beadwork", texture: "t8", image: IMAGES.craftBead },
+  { tag: "Crafted in India", texture: "t4", image: IMAGES.craftIndia },
 ];
 
 function CraftSection() {

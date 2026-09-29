@@ -57,7 +57,7 @@ export default function CustomerCare() {
         eyebrow="We're Here to Help"
         title="Customer Care"
         texture="t3"
-        image={IMAGES.palaceInterior}
+        image={IMAGES.careHero}
         label="Customer Care hero"
       />
 

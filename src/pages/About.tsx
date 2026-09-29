@@ -6,11 +6,11 @@ import type { TextureKey } from "../lib/textures";
 import { IMAGES } from "../lib/images";
 
 const GRID: { texture: TextureKey; image: string; label: string; tall?: boolean }[] = [
-  { texture: "t1", image: IMAGES.palaceInterior, label: "Heritage home exterior", tall: true },
-  { texture: "t5", image: IMAGES.threads, label: "Craft close-up" },
-  { texture: "t8", image: IMAGES.marigold, label: "Fabric macro" },
-  { texture: "t2", image: IMAGES.doorway, label: "Behind the scenes" },
-  { texture: "t3", image: IMAGES.tilePattern, label: "Architecture detail" },
+  { texture: "t1", image: IMAGES.aboutGallery1, label: "Heritage home exterior", tall: true },
+  { texture: "t5", image: IMAGES.aboutGallery2, label: "Craft close-up" },
+  { texture: "t8", image: IMAGES.aboutGallery3, label: "Fabric macro" },
+  { texture: "t2", image: IMAGES.aboutGallery4, label: "Behind the scenes" },
+  { texture: "t3", image: IMAGES.aboutGallery5, label: "Architecture detail" },
 ];
 
 const VALUES = [
@@ -59,7 +59,7 @@ export default function About() {
       <Nav />
 
       <section className="relative flex items-end overflow-hidden" style={{ height: "56vh", minHeight: 380 }}>
-        <ImageSlot texture="t9" image={IMAGES.carvedDoor} label="About hero — heritage interior">
+        <ImageSlot texture="t9" image={IMAGES.aboutHero} label="About hero — heritage interior">
           <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 to-transparent" />
         </ImageSlot>
         <div className="relative z-[2] text-ivory px-[5vw] pb-[50px]">
@@ -183,7 +183,7 @@ export default function About() {
       {/* Made in India */}
       <section className="relative overflow-hidden">
         <div className="relative h-[50vh] min-h-[340px]">
-          <ImageSlot texture="t4" image={IMAGES.archway} label="Made in India — artisan workshop">
+          <ImageSlot texture="t4" image={IMAGES.madeInIndia} label="Made in India — artisan workshop">
             <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 to-transparent" />
           </ImageSlot>
           <div className="absolute inset-0 z-[2] flex items-end px-[5vw] pb-[50px]">

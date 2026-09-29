@@ -12,7 +12,7 @@ export default function Lookbook() {
   return (
     <div>
       <Nav />
-      <PageHero eyebrow="The Lookbook" title="Nikhaar, in Full" texture="t9" image={IMAGES.palaceInterior} label="Lookbook cover — full campaign spread" />
+      <PageHero eyebrow="The Lookbook" title="Nikhaar, in Full" texture="t9" image={IMAGES.lookbookHero} label="Lookbook cover — full campaign spread" />
 
       <section className="px-[5vw] py-[min(10vw,120px)]">
         <div className="columns-1 md:columns-3 gap-6 [column-fill:_balance]">

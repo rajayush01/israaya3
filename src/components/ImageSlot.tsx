@@ -21,7 +21,9 @@ export default function ImageSlot({
         <img
           src={image}
           alt={label}
-          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
         />
       ) : (
         <>

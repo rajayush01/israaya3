@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ImageSlot from "../components/ImageSlot";
 import { PRODUCTS } from "../data/products";
-import { IMAGES } from "../lib/images";
+import { productDetail } from "../lib/images";
 
 const ACCORDION: { title: string; body: (p: (typeof PRODUCTS)[number]) => string }[] = [
   { title: "The Story", body: (p) => p.story },
@@ -43,12 +43,10 @@ export default function Product() {
       <section className="px-[5vw] pt-[130px] pb-[min(10vw,120px)]">
         <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-[70px] items-start">
           <div>
-            {[
-              { texture: product.texture, image: product.image },
-              { texture: product.altTexture, image: product.altImage },
-              { texture: product.texture, image: product.altImage },
-              { texture: product.altTexture, image: product.image },
-            ].map((v, i) => (
+            {product.gallery.map((img, i) => ({
+              texture: i % 2 ? product.altTexture : product.texture,
+              image: img,
+            })).map((v, i) => (
               <div key={i} className="relative aspect-[3/4] overflow-hidden rounded-sm mb-4">
                 <ImageSlot texture={v.texture} image={v.image} label={`${product.name} — view ${i + 1}`} />
               </div>
@@ -113,7 +111,7 @@ export default function Product() {
       </section>
 
       <section className="relative h-[70vh]">
-        <ImageSlot texture={product.altTexture} image={IMAGES.threads} label={`${product.name} — embroidery detail`} />
+        <ImageSlot texture={product.altTexture} image={productDetail(PRODUCTS.indexOf(product))} label={`${product.name} — embroidery detail`} />
       </section>
 
       <section className="px-[5vw] py-[min(10vw,120px)]">

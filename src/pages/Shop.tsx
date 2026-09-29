@@ -22,7 +22,7 @@ export default function Shop() {
         eyebrow="Chapter I — 10 Pieces"
         title="Nikhaar"
         texture="t2"
-        image={IMAGES.tilePattern}
+        image={IMAGES.shopHero}
         label="Shop hero — heritage courtyard"
       />
 

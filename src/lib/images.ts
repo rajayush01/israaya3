@@ -1,31 +1,57 @@
+import links from "./uploaded-links.json";
+
 /**
- * Real photography used for brand/atmosphere imagery (architecture, craft,
- * texture) — all free-to-use under the Unsplash License. Product-specific
- * imagery (Shop grid, Product gallery, Lookbook, Featured Edit) intentionally
- * stays on the placeholder ImageSlot texture instead of using one of these,
- * because showing an unrelated real photo as if it were "Komal Tara" or any
- * other SKU would misrepresent what the actual garment looks like. Swap those
- * in once real product photography exists — see README.
- *
- * Helper `u()` appends Unsplash's own resizing params so images load at a
- * sensible size instead of the full-resolution original.
+ * Every image on the site comes from uploaded-links.json (R2-hosted).
+ * PHOTOS is the ordered pool; IMAGES names the non-product slots and
+ * productGallery() hands each product its own four photos.
+ * To re-map a slot, just change the index here — nothing else needs to move.
  */
-const u = (id: string, w = 1600) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+export const PHOTOS: string[] = (links as { file: string; url: string }[]).map((l) => l.url);
+
+const p = (i: number) => PHOTOS[i % PHOTOS.length];
+
+/** Four distinct photos per product (indices 0–23 for the six products). */
+export const productGallery = (productIndex: number): string[] =>
+  [0, 1, 2, 3].map((k) => p(productIndex * 4 + k));
+
+/** Wide "detail" strip on each product page (indices 24+). */
+export const productDetail = (productIndex: number): string => p(24 + productIndex);
 
 export const IMAGES = {
-  archway: u("photo-1649878920043-785e8410536d"), // marble archway, Alwar, Rajasthan
-  doorway: u("photo-1611369810713-0ae05461c709"), // heritage doorway, Bharatpur, Rajasthan
-  carvedDoor: u("photo-1758416835960-a76095724b32"), // ornate carved wooden double doors
-  tilePattern: u("photo-1718463383723-9a5f52707e75"), // ornate architectural tile pattern
-  palaceInterior: u("photo-1665910690884-e33a1ffb7bf9"), // Mysore Palace columns & ceiling
-  threads: u("photo-1760328715296-9714daa8a737"), // hand-worked thread / loom close-up
-  marigold: u("photo-1705475388142-a2700c4caeb5"), // marigold garlands
-  // Random fabric/textile stand-ins for product photography (see README —
-  // swap for real product shoots when available).
-  silkPurple: u("photo-1617157458504-d053be085fa5"), // purple/teal silk texture close-up
-  fabricKnit: u("photo-1636715986446-d58f0f9b3916"), // pale grey woven fabric texture
-  silkSilver: u("photo-1631663026562-1f55f0ecac3e"), // silver silk in afternoon light
+  // Home
+  homeHero: p(30),
+  reveal1: p(31),
+  reveal2: p(32),
+  reveal3: p(33),
+  reveal4: p(34),
+  collNikhaar: p(35),
+  collChapter2: p(36),
+  collChapter3: p(37),
+  craftZardozi: p(38),
+  craftDori: p(39),
+  craftResham: p(40),
+  craftBead: p(41),
+  craftIndia: p(42),
+  // Page heroes
+  shopHero: p(43),
+  careHero: p(30),
+  storiesHero: p(31),
+  lookbookHero: p(32),
+  aboutHero: p(33),
+  // About
+  aboutGallery1: p(34),
+  aboutGallery2: p(35),
+  aboutGallery3: p(36),
+  aboutGallery4: p(37),
+  aboutGallery5: p(38),
+  madeInIndia: p(39),
+  // Stories
+  story1: p(24),
+  story2: p(25),
+  story3: p(26),
+  story4: p(27),
+  story5: p(28),
+  storyDetail: p(29),
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

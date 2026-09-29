@@ -34,7 +34,7 @@ export default function Story() {
       </section>
 
       <section className="relative h-[60vh] my-8 mx-[5vw] overflow-hidden rounded-sm">
-        <ImageSlot texture="t8" image={IMAGES.threads} label={`${story.title} — embroidery detail`} />
+        <ImageSlot texture="t8" image={IMAGES.storyDetail} label={`${story.title} — embroidery detail`} />
       </section>
 
       <section className="px-[5vw]">
