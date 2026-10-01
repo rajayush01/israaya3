@@ -42,7 +42,7 @@ function Preloader() {
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.02, 1]);
   const [curtainDown, setCurtainDown] = useState(false);
 
   useEffect(() => {
@@ -221,14 +221,14 @@ function ChapterStorytelling() {
         </motion.div>
       </div>
 
-      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." />
+      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." height="135vh" />
 
       <div className="grid md:grid-cols-2 gap-5">
-        <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="60vh" />
-        <RevealPanel texture="t3" image={IMAGES.reveal3} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="60vh" />
+        <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="75vh" />
+        <RevealPanel texture="t3" image={IMAGES.reveal3} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="75vh" />
       </div>
 
-      <RevealPanel texture="t4" image={IMAGES.reveal4} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="75vh" />
+      <RevealPanel texture="t4" image={IMAGES.reveal4} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="90vh" />
 
       <div className="flex justify-center mt-12 pb-24">
         <Link

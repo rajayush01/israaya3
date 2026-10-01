@@ -23,7 +23,7 @@ export default function ImageSlot({
           alt={label}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
+           className="absolute inset-0 w-full h-full object-cover object-center"
         />
       ) : (
         <>
