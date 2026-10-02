@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import ImageSlot from "../components/ImageSlot";
 import { PRODUCTS } from "../data/products";
 import { IMAGES } from "../lib/images";
+import logo from "../assets/ISRAAYA LOGO.svg";
+import logo1 from "../assets/ISRAAYA MOTIF.svg";
 
 const Arrow = ({ className = "" }: { className?: string }) => (
   <svg width="16" height="10" viewBox="0 0 16 10" fill="none" className={className}>
@@ -33,7 +35,8 @@ function Preloader() {
         transition={{ duration: 1 }}
         className="font-display text-3xl md:text-5xl"
       >
-        ISRAAYA
+        <img src={logo1} alt="Israya Motif" className="h-20" />
+        <img src={logo} alt="Israya Logo" className="h-20 -ml-5" />
       </motion.h1>
     </motion.div>
   );
@@ -221,7 +224,7 @@ function ChapterStorytelling() {
         </motion.div>
       </div>
 
-      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." height="135vh" />
+      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." height="90vh" />
 
       <div className="grid md:grid-cols-2 gap-5">
         <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="75vh" />
@@ -398,7 +401,7 @@ export default function Home() {
       <Hero />
       <BrandIntro />
       <ChapterStorytelling />
-      <CollectionsGrid />
+      {/* <CollectionsGrid /> */}
       <CraftSection />
       <FeaturedEdit />
       <Footer />

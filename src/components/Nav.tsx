@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/ISRAAYA LOGO.svg";
 
 const LINKS = [
   { label: "Shop", to: "/shop" },
@@ -33,12 +34,12 @@ export default function Nav({ transparentOnTop = false }: NavProps) {
       <nav
         className={`fixed top-0 left-0 right-0 z-[500] flex items-center justify-between transition-all duration-500 ${
           isTransparent
-            ? "bg-transparent py-7 px-[5vw] text-ivory"
-            : "bg-ivory/90 backdrop-blur-md py-4 px-[5vw] shadow-[0_1px_0_rgba(44,33,29,0.06)] text-espresso"
+            ? "bg-transparent px-[5vw] text-ivory"
+            : "bg-ivory/90 backdrop-blur-md  px-[5vw] shadow-[0_1px_0_rgba(44,33,29,0.06)] text-espresso"
         }`}
       >
         <Link to="/" className="font-display text-xl tracking-[0.32em]">
-          ISRAAYA
+          <img src={logo} alt="Israya Logo" className="h-20"/>
         </Link>
 
         <div className="hidden md:flex gap-10 text-xs tracking-[0.12em] uppercase">
