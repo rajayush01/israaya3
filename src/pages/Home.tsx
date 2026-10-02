@@ -246,67 +246,67 @@ function ChapterStorytelling() {
   );
 }
 
-const COLLECTIONS: { name: string; texture: any; image: string; span: string; dark?: boolean; locked?: boolean }[] = [
-  { name: "Nikhaar", texture: "t1", image: IMAGES.collNikhaar, span: "md:col-span-6" },
-  { name: "Chapter II", texture: "t2", image: IMAGES.collChapter2, span: "md:col-span-4", locked: true },
-  { name: "Chapter III", texture: "t3", image: IMAGES.collChapter3, span: "md:col-span-3", locked: true },
-];
+// const COLLECTIONS: { name: string; texture: any; image: string; span: string; dark?: boolean; locked?: boolean }[] = [
+//   { name: "Nikhaar", texture: "t1", image: IMAGES.collNikhaar, span: "md:col-span-6" },
+//   { name: "Chapter II", texture: "t2", image: IMAGES.collChapter2, span: "md:col-span-4", locked: true },
+//   { name: "Chapter III", texture: "t3", image: IMAGES.collChapter3, span: "md:col-span-3", locked: true },
+// ];
 
-function CollectionsGrid() {
-  return (
-    <section id="collections" className="px-[5vw] py-[min(14vw,150px)]">
-      <div className="text-center mb-16">
-        <div className="text-[11px] tracking-[0.28em] uppercase text-wine mb-3">Enter the Collection</div>
-        <h2 className="font-display text-[30px] md:text-[46px]">Shop by Chapter</h2>
-        <p className="font-serif text-base text-[#8a7a70] mt-4 max-w-[560px] mx-auto">
-          Each chapter is created once and never repeated. Nikhaar is the one open now.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-10 gap-5">
-        {COLLECTIONS.map((c) =>
-          c.locked ? (
-            <div
-              key={c.name}
-              className={`group relative overflow-hidden rounded-sm aspect-[3/4] ${c.span}`}
-            >
-              <ImageSlot texture={c.texture} image={c.image} label={c.name}>
-                <div className="absolute inset-0 bg-espresso/70" />
-              </ImageSlot>
-              <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center text-ivory text-center px-4">
-                <div className="font-display text-xl mb-2">{c.name}</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-ivory/60">Coming Soon</div>
-              </div>
-            </div>
-          ) : (
-            <Link
-              key={c.name}
-              to="/shop"
-              className={`group relative overflow-hidden rounded-sm aspect-[3/4] hoverable ${c.span}`}
-            >
-              <ImageSlot texture={c.texture} image={c.image} label={c.name}>
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 to-transparent" />
-              </ImageSlot>
-              <div
-                className={`absolute left-5 bottom-5 z-[2] font-display text-xl transition-transform group-hover:-translate-y-2 ${
-                  c.dark ? "text-espresso" : "text-ivory"
-                }`}
-              >
-                {c.name}
-              </div>
-              <div
-                className={`absolute right-5 bottom-5 z-[2] opacity-0 group-hover:opacity-100 transition-opacity ${
-                  c.dark ? "text-espresso" : "text-ivory"
-                }`}
-              >
-                →
-              </div>
-            </Link>
-          )
-        )}
-      </div>
-    </section>
-  );
-}
+// function CollectionsGrid() {
+//   return (
+//     <section id="collections" className="px-[5vw] py-[min(14vw,150px)]">
+//       <div className="text-center mb-16">
+//         <div className="text-[11px] tracking-[0.28em] uppercase text-wine mb-3">Enter the Collection</div>
+//         <h2 className="font-display text-[30px] md:text-[46px]">Shop by Chapter</h2>
+//         <p className="font-serif text-base text-[#8a7a70] mt-4 max-w-[560px] mx-auto">
+//           Each chapter is created once and never repeated. Nikhaar is the one open now.
+//         </p>
+//       </div>
+//       <div className="grid grid-cols-2 md:grid-cols-10 gap-5">
+//         {COLLECTIONS.map((c) =>
+//           c.locked ? (
+//             <div
+//               key={c.name}
+//               className={`group relative overflow-hidden rounded-sm aspect-[3/4] ${c.span}`}
+//             >
+//               <ImageSlot texture={c.texture} image={c.image} label={c.name}>
+//                 <div className="absolute inset-0 bg-espresso/70" />
+//               </ImageSlot>
+//               <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center text-ivory text-center px-4">
+//                 <div className="font-display text-xl mb-2">{c.name}</div>
+//                 <div className="text-[10px] tracking-[0.2em] uppercase text-ivory/60">Coming Soon</div>
+//               </div>
+//             </div>
+//           ) : (
+//             <Link
+//               key={c.name}
+//               to="/shop"
+//               className={`group relative overflow-hidden rounded-sm aspect-[3/4] hoverable ${c.span}`}
+//             >
+//               <ImageSlot texture={c.texture} image={c.image} label={c.name}>
+//                 <div className="absolute inset-0 bg-gradient-to-t from-espresso/55 to-transparent" />
+//               </ImageSlot>
+//               <div
+//                 className={`absolute left-5 bottom-5 z-[2] font-display text-xl transition-transform group-hover:-translate-y-2 ${
+//                   c.dark ? "text-espresso" : "text-ivory"
+//                 }`}
+//               >
+//                 {c.name}
+//               </div>
+//               <div
+//                 className={`absolute right-5 bottom-5 z-[2] opacity-0 group-hover:opacity-100 transition-opacity ${
+//                   c.dark ? "text-espresso" : "text-ivory"
+//                 }`}
+//               >
+//                 →
+//               </div>
+//             </Link>
+//           )
+//         )}
+//       </div>
+//     </section>
+//   );
+// }
 
 const CRAFT_TAGS: { tag: string; texture: any; image: string }[] = [
   { tag: "Zardozi", texture: "t5", image: IMAGES.craftZardozi },
