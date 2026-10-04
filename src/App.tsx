@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import Cursor from "./components/Cursor";
+// import Cursor from "./components/Cursor";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
@@ -21,7 +21,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Cursor />
+      {/* <Cursor /> */}
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

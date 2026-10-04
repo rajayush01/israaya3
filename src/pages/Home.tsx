@@ -8,6 +8,7 @@ import { PRODUCTS } from "../data/products";
 import { IMAGES } from "../lib/images";
 import logo from "../assets/ISRAAYA LOGO.svg";
 import logo1 from "../assets/ISRAAYA MOTIF.svg";
+import ChapterStorytelling from "../components/ChapterStorytelling";
 
 const Arrow = ({ className = "" }: { className?: string }) => (
   <svg width="16" height="10" viewBox="0 0 16 10" fill="none" className={className}>
@@ -58,13 +59,13 @@ function Hero() {
       <motion.div style={{ scale }} className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundPosition: "50% 22%", backgroundImage: `url(${IMAGES.homeHero})` }}
+          style={{ backgroundPosition: "50% 35%", backgroundImage: `url(${IMAGES.homeHero})` }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(155deg, rgba(138,47,75,.55) 0%, rgba(125,22,56,.6) 38%, rgba(87,13,38,.75) 72%, rgba(44,33,29,.85) 120%)",
+              "linear-gradient(155deg,rgba(45, 43, 40, 0.55) 0%,rgba(28, 27, 25, 0.65) 38%,rgba(12, 12, 11, 0.8) 72%,rgba(3, 3, 3, 0.92) 120%)",
           }}
         />
       </motion.div>
@@ -98,7 +99,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 1 }}
-          className="font-serif italic text-lg md:text-2xl text-peach mb-8"
+          className="font-serif italic text-lg md:text-2xl text-gold mb-8"
         >
           An ode to quiet radiance.
         </motion.p>
@@ -128,9 +129,10 @@ function BrandIntro() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 1 }}
-        className="font-display text-[30px] md:text-[44px] tracking-[0.35em] mb-6"
+        className="flex flex-col justify-center items-center font-display text-[30px] md:text-[44px] tracking-[0.35em]"
       >
-        ISRAAYA
+        <img src={logo1} alt="Brand Logo" className="h-20" />
+        <img src={logo} alt="Brand Logo" className="h-20" />
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 24 }}
@@ -183,68 +185,68 @@ function RevealPanel({
   );
 }
 
-function ChapterStorytelling() {
-  return (
-    <section id="chapter" className="px-[5vw]">
-      <div className="flex flex-col items-center text-center pb-14">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-[11px] tracking-[0.28em] uppercase text-wine mb-4"
-        >
-          Chapter I
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="font-display text-[64px] md:text-[150px] leading-[0.9]"
-        >
-          Nikhaar
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="font-serif italic text-xl text-wine my-5"
-        >
-          What gardens know.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-[11px] tracking-[0.2em] uppercase text-[#8a7a70]"
-        >
-          10 Pieces — From the Nikhaar Chapter
-        </motion.div>
-      </div>
+// function ChapterStorytelling() {
+//   return (
+//     <section id="chapter" className="px-[5vw]">
+//       <div className="flex flex-col items-center text-center pb-14">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           className="text-[11px] tracking-[0.28em] uppercase text-wine mb-4"
+//         >
+//           Chapter I
+//         </motion.div>
+//         <motion.h2
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.1 }}
+//           className="font-display text-[64px] md:text-[150px] leading-[0.9]"
+//         >
+//           Nikhaar
+//         </motion.h2>
+//         <motion.p
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.2 }}
+//           className="font-serif italic text-xl text-wine my-5"
+//         >
+//           What gardens know.
+//         </motion.p>
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.3 }}
+//           className="text-[11px] tracking-[0.2em] uppercase text-[#8a7a70]"
+//         >
+//           10 Pieces — From the Nikhaar Chapter
+//         </motion.div>
+//       </div>
 
-      <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." height="90vh" />
+//       <RevealPanel texture="t1" image={IMAGES.reveal1} label="The Silhouette" eyebrow="01 — The Silhouette" caption="Named for what the garden holds." height="90vh" />
 
-      <div className="grid md:grid-cols-2 gap-5">
-        <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="75vh" />
-        <RevealPanel texture="t3" image={IMAGES.reveal3} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="75vh" />
-      </div>
+//       <div className="grid md:grid-cols-2 gap-5">
+//         <RevealPanel texture="t2" image={IMAGES.reveal2} label="Close-Up embroidery" eyebrow="02 — Close-Up" caption="Zardozi, dori work, resham, beadwork." height="75vh" />
+//         <RevealPanel texture="t3" image={IMAGES.reveal3} label="Architecture" eyebrow="03 — Architecture" caption="Rooted in India, built for the world." height="75vh" />
+//       </div>
 
-      <RevealPanel texture="t4" image={IMAGES.reveal4} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="90vh" />
+//       <RevealPanel texture="t4" image={IMAGES.reveal4} label="In Motion" eyebrow="04 — In Motion" caption="Made to order. Made once it's called for." height="90vh" />
 
-      <div className="flex justify-center mt-12 pb-24">
-        <Link
-          to="/shop"
-          className="group inline-flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase border-b border-wine/30 text-wine pb-1.5 hover:gap-4 transition-all hoverable"
-        >
-          Explore the Collection
-          <Arrow className="group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
-    </section>
-  );
-}
+//       <div className="flex justify-center mt-12 pb-24">
+//         <Link
+//           to="/shop"
+//           className="group inline-flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase border-b border-wine/30 text-wine pb-1.5 hover:gap-4 transition-all hoverable"
+//         >
+//           Explore the Collection
+//           <Arrow className="group-hover:translate-x-1 transition-transform" />
+//         </Link>
+//       </div>
+//     </section>
+//   );
+// }
 
 // const COLLECTIONS: { name: string; texture: any; image: string; span: string; dark?: boolean; locked?: boolean }[] = [
 //   { name: "Nikhaar", texture: "t1", image: IMAGES.collNikhaar, span: "md:col-span-6" },

@@ -27,7 +27,7 @@ body {
   color: var(--color-espresso);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
 }
 
 @media (max-width: 900px) {

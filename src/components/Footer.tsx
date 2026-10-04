@@ -11,7 +11,7 @@ const LEGAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-maroon text-ivory px-[5vw] pt-[70px] pb-7">
+    <footer className="bg-black text-ivory px-[5vw] pt-[70px] pb-7">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
         <div>
           <div className="font-display text-xl tracking-[0.3em] mb-3">ISRAAYA</div>
