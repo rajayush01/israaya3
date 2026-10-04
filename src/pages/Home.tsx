@@ -151,39 +151,39 @@ function BrandIntro() {
   );
 }
 
-function RevealPanel({
-  texture,
-  image,
-  label,
-  eyebrow,
-  caption,
-  height = "82vh",
-}: {
-  texture: any;
-  image?: string;
-  label: string;
-  eyebrow: string;
-  caption: string;
-  height?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0.4 }}
-      whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
-      viewport={{ once: true, amount: 0.0 }}
-      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-sm mb-5 flex items-end"
-      style={{ height }}
-    >
-      <ImageSlot texture={texture} image={image} label={label} />
-      <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 to-transparent" />
-      <div className="relative z-[2] text-ivory p-8 text-[11px] tracking-[0.2em] uppercase">
-        {eyebrow}
-        <span className="block font-serif italic text-2xl tracking-normal normal-case mt-2">{caption}</span>
-      </div>
-    </motion.div>
-  );
-}
+// function RevealPanel({
+//   texture,
+//   image,
+//   label,
+//   eyebrow,
+//   caption,
+//   height = "82vh",
+// }: {
+//   texture: any;
+//   image?: string;
+//   label: string;
+//   eyebrow: string;
+//   caption: string;
+//   height?: string;
+// }) {
+//   return (
+//     <motion.div
+//       initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0.4 }}
+//       whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
+//       viewport={{ once: true, amount: 0.0 }}
+//       transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+//       className="relative overflow-hidden rounded-sm mb-5 flex items-end"
+//       style={{ height }}
+//     >
+//       <ImageSlot texture={texture} image={image} label={label} />
+//       <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 to-transparent" />
+//       <div className="relative z-[2] text-ivory p-8 text-[11px] tracking-[0.2em] uppercase">
+//         {eyebrow}
+//         <span className="block font-serif italic text-2xl tracking-normal normal-case mt-2">{caption}</span>
+//       </div>
+//     </motion.div>
+//   );
+// }
 
 // function ChapterStorytelling() {
 //   return (
